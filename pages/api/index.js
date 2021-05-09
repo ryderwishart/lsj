@@ -1,7 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import lsj from '../../data/lexica/LSJ.entries.json'
+import lsj from '../../data/lexica/LSJ.index.json'
 
 export default (req, res) => {
+  const lsjWithFirstIndexWordOnly = lsj.map(index => {
+    const searchString = Object.keys(index)[0]
+    const onlyThreeForms = index[searchString].w.length === 3
+    if(!onlyThreeForms) {console.log('Index has erroneous entry. Greek words should be formatted: [current entry, previous entry, next entry]', searchString)}
+    return {
+      s: searchString,
+      w: index[searchString].w[0]
+    }
+  })
   res.statusCode = 200
-  res.json(lsj)
+  res.json(lsjWithFirstIndexWordOnly)
 }
