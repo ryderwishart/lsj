@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 
 const AutoCompleteSearch = (props) => {
@@ -30,8 +31,10 @@ const AutoCompleteSearch = (props) => {
         return (
             <ul className="search-results">
                 {filteredResults.map((word, index) => (
-                    <li key={index}>
-                        {word.w}
+                    <li>
+                    <Link key={index} href={`${word.s}`}>
+                        <a>{word.w}</a>
+                    </Link>
                     </li>
                 ))}
             </ul>

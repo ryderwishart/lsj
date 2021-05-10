@@ -13,10 +13,10 @@ export default function Home(props) {
         </h1>
         <p className={styles.description}>
           Get started by editing{" "}
-            <AutoCompleteSearch wordIndices={props.words} />
           <code className={styles.code}>
           </code>
         </p>
+            <AutoCompleteSearch wordIndices={props.words} />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
