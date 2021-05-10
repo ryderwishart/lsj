@@ -1,4 +1,4 @@
-import Head from "next/head";
+import SEO from '../components/SEO';
 import styles from "../styles/Home.module.css";
 import { server } from "../config";
 import AutoCompleteSearch from "../components/Autocomplete";
@@ -6,19 +6,16 @@ import AutoCompleteSearch from "../components/Autocomplete";
 export default function Home(props) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+     <SEO/>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Search the <a href="https://nextjs.org">LSJ</a> Lexicon
         </h1>
-        <AutoCompleteSearch wordIndices={props.words} />
         <p className={styles.description}>
           Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+            <AutoCompleteSearch wordIndices={props.words} />
+          <code className={styles.code}>
+          </code>
         </p>
 
         <div className={styles.grid}>

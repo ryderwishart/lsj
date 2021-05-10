@@ -52,7 +52,7 @@ const AutoCompleteSearch = (props) => {
     return (
         <section className="search">
             <h1>Search {searchTerm.length ? `results for: ${searchTerm}` : null}</h1>
-            <input type="text" placeholder="Search for tutorials..." onKeyUp={updateSearch} />
+            <input type="text" placeholder="Search for Greek words in LSJ..." onKeyUp={updateSearch} />
             <SearchResults />
         </section>
     );
