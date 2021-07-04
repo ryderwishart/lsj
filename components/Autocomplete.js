@@ -32,7 +32,7 @@ const AutoCompleteSearch = (props) => {
             <ul className="search-results">
                 {filteredResults.map((word, index) => (
                     <li>
-                    <Link key={index} href={`${word.s}`}>
+                    <Link key={index} href={`/${word.s}`}>
                         <a>{word.w}</a>
                     </Link>
                     </li>

@@ -4,17 +4,18 @@ import styles from "../styles/Home.module.css";
 import SEO from "../components/SEO";
 
 const EpisodePage = (props) => {
-  console.log(props);
   if (props.wordData) {
     return (
       <>
         <SEO title={props.wordData.id} />
         <div className={styles.container}>
           <main className={styles.main}>
+          <div className={styles.grid}>
             <div className={styles.card}>
               <h1>{props.wordData.id}</h1>
-              <p>{props.wordData.description}</p>
+              <div dangerouslySetInnerHTML={{ __html: props.wordData.description }} />
             </div>
+          </div>
           </main>
           <footer className={styles.footer}>
             <div
